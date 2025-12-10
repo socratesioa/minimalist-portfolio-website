@@ -1,0 +1,100 @@
+@use "../abstracts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+$font-body: "Public Sans", sans-serif;
+$font-heading: "Ibarra Real Nova", serif;
+
+$text-preset-1-mobile: (
+  family: $font-heading,
+  size: 40px,
+  lineHeight: 42px,
+  letterSpacing: -0.36px,
+  weight: 700,
+);
+
+$text-preset-2-mobile: (
+  family: $font-heading,
+  size: 40px,
+  lineHeight: 42px,
+  letterSpacing: -0.36px,
+  weight: 700,
+);
+
+$text-preset-3-mobile: (
+  family: $font-heading,
+  size: 32px,
+  lineHeight: 42px,
+  letterSpacing: -0.29px,
+  weight: 400,
+);
+
+$text-preset-links-mobile: (
+  family: $font-body,
+  size: 12px,
+  lineHeight: 1,
+  letterSpacing: 2px,
+  weight: 400,
+);
+
+$text-preset-about-mobile: (
+  family: $font-body,
+  size: 16px,
+  lineHeight: 30px,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-body: (
+  family: $font-body,
+  size: 15px,
+  lineHeight: 30px,
+  letterSpacing: 0,
+  weight: 400,
+);
+
+$text-preset-pagination-title: (
+  family: $font-heading,
+  size: 32px,
+  lineHeight: 36px,
+  letterSpacing: -0.29px,
+  weight: 400,
+);
+
+$text-preset-skills-mobile: (
+  family: $font-body,
+  size: 13px,
+  lineHeight: 30px,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+$text-preset-labels-mobile: (
+  family: $font-body,
+  size: 13px,
+  lineHeight: 30px,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+$text-preset-skills-desktop: (
+  family: $font-body,
+  size: 16px,
+  lineHeight: 30px,
+  letterSpacing: 0,
+  weight: 700,
+);
+
+h1 {
+  @include text-preset($text-preset-1-mobile);
+  color: $clr-body-text-dark;
+}
+
+h2 {
+  @include text-preset($text-preset-1-mobile);
+  color: $clr-body-text-dark;
+}
+
+body {
+  @include text-preset($text-preset-body);
+}

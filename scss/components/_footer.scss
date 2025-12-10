@@ -1,0 +1,70 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+footer {
+  background-color: $clr-dark-bg;
+  color: $clr-body-text-white;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 56px;
+  @include respond(medium, min) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px 40px;
+  }
+  @include respond(xl, min) {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+}
+
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  @include respond(medium, min) {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 48px;
+  }
+}
+
+.footer-nav {
+  list-style: none;
+  display: grid;
+  gap: 32px;
+  text-align: center;
+  @include respond(medium, min) {
+    display: flex;
+    gap: 42px;
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $clr-body-text-white;
+  @include text-preset(typo.$text-preset-links-mobile);
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+  color: $clr-body-text-white;
+}

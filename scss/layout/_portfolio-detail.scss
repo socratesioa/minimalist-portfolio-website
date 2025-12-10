@@ -1,0 +1,173 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+.inner-heading {
+  @include text-preset(typo.$text-preset-3-mobile);
+  color: $clr-body-text-dark;
+}
+
+.project-details-wrapper {
+  @include respond(xl, min) {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    column-gap: 125px;
+    align-items: start;
+    margin-top: 115px;
+    margin-bottom: 64px;
+  }
+}
+
+.right-column-wrapper {
+  @include respond(xl, min) {
+    grid-column: 2;
+    display: grid;
+    gap: 40px;
+  }
+}
+
+.project-intro {
+  margin-top: 40px;
+  margin-bottom: 48px;
+  display: grid;
+  justify-items: start;
+  gap: 24px;
+  padding: 24px 0;
+  position: relative;
+  @include respond(medium, min) {
+    padding: 32px 0;
+    margin-bottom: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: unset;
+    column-gap: 12px;
+    row-gap: 16px;
+    grid-template-areas:
+      "title text"
+      "skills text"
+      "button text";
+  }
+  @include respond(xl, min) {
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: start;
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    grid-template-areas: unset;
+    row-gap: 0;
+    padding: 48px 0;
+  }
+}
+
+#project-hero-heading {
+  @include respond(medium, min) {
+    grid-area: title;
+  }
+  @include respond(xl, min) {
+    grid-area: unset;
+  }
+}
+
+.tags {
+  @include text-preset(typo.$text-preset-skills-mobile);
+  color: $clr-accent;
+  display: grid;
+  gap: 0;
+  @include respond(medium, min) {
+    grid-area: skills;
+  }
+  @include respond(xl, min) {
+    @include text-preset(typo.$text-preset-skills-desktop);
+    grid-area: unset;
+    gap: 16px;
+  }
+}
+
+.visit-btn {
+  @include respond(medium, min) {
+    grid-area: button;
+  }
+  @include respond(xl, min) {
+    grid-area: unset;
+    margin-top: 32px;
+  }
+}
+
+.project-description {
+  @include respond(medium, min) {
+    grid-area: text;
+  }
+  @include respond(xl, min) {
+    grid-area: unset;
+    margin-top: 29px;
+    margin-bottom: 23px;
+  }
+}
+
+.project-intro::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: hsla(245, 10%, 22%, 0.15);
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.project-intro::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: hsla(245, 10%, 22%, 0.15);
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+
+#project-background {
+  margin-bottom: 40px;
+  display: grid;
+  gap: 28px;
+  @include respond(xl, min) {
+    margin-bottom: 0;
+  }
+}
+
+#static-previews {
+  margin-bottom: 64px;
+  display: grid;
+  gap: 40px;
+  @include respond(medium, min) {
+    margin-bottom: 80px;
+  }
+  @include respond(xl, min) {
+    margin-bottom: 0;
+  }
+}
+
+.static-previews-wrapper {
+  display: grid;
+  gap: 32px;
+}
+
+.project-hero-img,
+.static-preview-img {
+  width: 100%;
+  height: auto;
+}
+
+.project-hero-img {
+  @include respond(xl, min) {
+    margin-top: 47px;
+  }
+}
+
+.body-link {
+  color: $clr-body-text-dark;
+}
+
+.body-link:hover {
+  color: $clr-accent;
+}

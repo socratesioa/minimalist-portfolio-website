@@ -1,0 +1,54 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 115px;
+  @include respond(medium, min) {
+    display: grid;
+    grid-template-columns: 281px 1fr;
+    gap: 69px;
+  }
+  @include respond(xl, min) {
+    grid-template-columns: 540px 1fr;
+    gap: 125px;
+  }
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+}
+
+.about-container {
+  @include respond(medium, min) {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: hsla(245, 10%, 22%, 0.15);
+  display: block;
+}
+
+.about-text {
+  margin-top: 32px;
+  margin-bottom: 51px;
+  @include respond(medium, min) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.about-text p {
+  margin-top: 28px;
+  margin-bottom: 24px;
+  @include text-preset(typo.$text-preset-about-mobile);
+}

@@ -1,0 +1,68 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+.hamburger {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  @include respond(medium, min) {
+    display: none;
+  }
+}
+
+.primary-btn {
+  background-color: $clr-primary-btn;
+  color: $clr-body-text-white;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  height: 48px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  outline: none;
+  @include text-preset(typo.$text-preset-links-mobile);
+}
+
+.primary-btn:focus-visible {
+  outline: 2px solid $clr-accent;
+  outline-offset: 2px;
+}
+
+.primary-btn:hover {
+  background-color: $clr-accent;
+}
+
+.primary-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrows {
+  background-color: hsla(0, 0%, 0%, 0.1);
+  height: 100%;
+  color: $clr-accent;
+}
+
+.primary-btn:hover .arrows {
+  color: $clr-body-text-white;
+}
+
+.secondary-btn {
+  border: 1px solid $clr-dark-bg;
+  padding: 17px 33.5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $clr-dark-bg;
+  @include text-preset(typo.$text-preset-links-mobile);
+}
+
+.secondary-btn:hover {
+  background-color: $clr-dark-bg;
+  color: $clr-bg;
+}

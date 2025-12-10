@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+#portfolio {
+  display: grid;
+  gap: 96px;
+  margin-bottom: 80px;
+  @include respond(medium, min) {
+    margin-bottom: 96px;
+    gap: 88px;
+  }
+  @include respond(large, min) {
+    gap: 80px;
+    margin-bottom: 150px;
+  }
+}
+
+#portfolio article {
+  @include respond(medium, min) {
+    display: flex;
+    align-items: center;
+    gap: 69px;
+  }
+  @include respond(large, min) {
+    gap: 125px;
+    max-width: 1015px;
+    width: 100%;
+  }
+}
+
+#portfolio article:nth-child(odd) {
+  @include respond(medium, min) {
+    flex-direction: row-reverse;
+  }
+  @include respond(large, min) {
+    justify-self: flex-end;
+  }
+}

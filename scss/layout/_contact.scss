@@ -1,0 +1,91 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+#contact {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 80px;
+  @include respond(medium, min) {
+    margin-bottom: 96px;
+    margin-top: 47px;
+  }
+  @include respond(large, min) {
+    margin-bottom: 109px;
+    margin-top: 40px;
+    gap: 48px;
+  }
+}
+
+#contact section {
+  display: grid;
+  gap: 24px;
+  padding-top: 24px;
+  position: relative;
+  @include respond(medium, min) {
+    padding-top: 32px;
+  }
+  @include respond(large, min) {
+    padding-top: 48px;
+    grid-template-columns: 1fr 635px;
+    gap: 125px;
+  }
+}
+
+#contact section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: hsla(245, 10%, 22%, 0.15);
+}
+
+.get-in-touch-text {
+  display: grid;
+  gap: 24px;
+}
+
+#contact .social {
+  justify-content: flex-start;
+}
+
+.social-link-contact {
+  color: $clr-body-text-dark;
+}
+
+.toast {
+  display: none;
+  position: fixed;
+  z-index: 20000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $clr-dark-bg;
+  color: $clr-body-text-white;
+  border-radius: 16px;
+  padding: 40px 16px;
+}
+
+.toast p {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.toast.visible {
+  display: block;
+}
+
+.toast-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 15000;
+}
+
+.toast-overlay.visible {
+  display: block;
+}

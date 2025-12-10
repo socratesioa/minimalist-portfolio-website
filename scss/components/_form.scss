@@ -1,0 +1,79 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+form {
+  display: grid;
+  gap: 24px;
+}
+
+label {
+  @include text-preset(typo.$text-preset-labels-mobile);
+}
+
+input {
+  background-color: hsla(245, 10%, 22%, 0.1);
+  border: none;
+  outline: none;
+  padding: 9px 16px;
+  @include text-preset(typo.$text-preset-labels-mobile);
+  font-weight: 400;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: hsla(245, 10%, 22%, 0.4);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid $clr-accent;
+}
+
+.input-error {
+  border: 1px solid $clr-error;
+}
+
+.error-message {
+  color: $clr-error;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+textarea {
+  background-color: hsla(245, 10%, 22%, 0.1);
+  border: none;
+  outline: none;
+  padding: 9px 16px;
+  @include text-preset(typo.$text-preset-labels-mobile);
+  font-weight: 400;
+  height: 96px;
+  resize: none;
+}
+
+.submit-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 48px;
+  background-color: $clr-primary-btn;
+  color: $clr-body-text-white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @include text-preset(typo.$text-preset-links-mobile);
+  text-transform: uppercase;
+}
+
+.submit-btn:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid $clr-accent;
+}
+
+.input-group {
+  display: grid;
+  gap: 8px;
+}

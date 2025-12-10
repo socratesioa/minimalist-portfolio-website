@@ -1,0 +1,63 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+.project-preview-text {
+  position: relative;
+  margin-top: 32px;
+  padding: 24px 0;
+  @include respond(medium, min) {
+    margin-top: 0;
+    padding: 32px 0 50px 0;
+  }
+  @include respond(large, min) {
+    padding: 0;
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+  }
+}
+
+.project-preview-text p {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  @include respond(medium, min) {
+    margin-top: 29px;
+    margin-bottom: 35px;
+  }
+  @include respond(large, min) {
+    margin-top: 28px;
+    margin-bottom: 24px;
+  }
+}
+
+.project-preview-text::before,
+.project-preview-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: hsla(245, 10%, 22%, 0.15);
+}
+
+.project-preview-text::before {
+  top: 0;
+}
+
+.project-preview-text::after {
+  bottom: 0;
+}
+
+.portfolio-img {
+  width: 100%;
+  height: auto;
+  @include respond(medium, min) {
+    min-width: 339px;
+    width: 100%;
+    height: auto;
+  }
+  @include respond(large, min) {
+    max-width: 540px;
+  }
+}

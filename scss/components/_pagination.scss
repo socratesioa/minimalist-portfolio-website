@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+@use "../base/typography" as typo;
+
+.pagination {
+  border-top: 1px solid hsla(245, 10%, 22%, 0.15);
+  border-bottom: 1px solid hsla(245, 10%, 22%, 0.15);
+  margin-bottom: 64px;
+}
+
+.pagination ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pagination a {
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 16px;
+  @include respond(medium, min) {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.previous,
+.next {
+  padding: 24px 0;
+  @include respond(medium, min) {
+    padding: 32px 0;
+  }
+}
+
+.next a {
+  align-items: flex-end;
+  @include respond(medium, min) {
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+.next {
+  border-left: 1px solid hsla(245, 10%, 22%, 0.15);
+
+  text-align: right;
+}
+
+.project-title {
+  display: block;
+  @include text-preset(typo.$text-preset-pagination-title);
+  color: $clr-body-text-dark;
+}
+
+.project-navigation {
+  display: block;
+  @include text-preset(typo.$text-preset-about-mobile);
+  color: hsla(245, 10%, 22%, 0.5);
+}
