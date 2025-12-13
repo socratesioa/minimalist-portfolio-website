@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
+- Solution URL: [Solution](https://github.com/socratesioa/minimalist-portfolio-website)
 - Live Site URL: [Live Site](https://socratesioa.github.io/minimalist-portfolio-website/)
 
 ## My process
